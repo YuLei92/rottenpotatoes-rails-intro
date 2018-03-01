@@ -62,3 +62,6 @@ form label {
 table#movies th.hilite {
   background-color: yellow;
 }
+/*
+Do not need to add this to application.css, set the background color to yellow.
+*/
