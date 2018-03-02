@@ -13,10 +13,10 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.order(params[:sort_by])
     if params[:ratings]
-      @movies = Moive.where(:rating => params[:ratings].keys).find(:all, :order => (params[:sort_by]))
+      @movies = Movie.where(:rating => params[:ratings].keys).order(params[:sort_by])
     end
     @sort_column = params[:sort_by]
-    @all_ratings = Moive.all_ratings
+    @all_ratings = Movie.all_ratings
     @set_ratings = params[:ratings]
     if !@set_ratings
       @set_ratings = Hash.new
